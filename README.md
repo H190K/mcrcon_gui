@@ -2,6 +2,14 @@
 
 A dual-interface Python application for managing Minecraft servers via RCON. Includes both a classic Tkinter GUI and a modern WebView-based GUI. Developed by [h190k](https://github.com/h190k).
 
+## Screenshot
+
+### Tkinter Version
+![Tk version image ](https://github.com/H190K/h190k.com-repo/blob/main/Screenshot%202025-10-07%20062558.png?raw=true)
+
+### WebView Version
+![Webview version image ](https://github.com/H190K/h190k.com-repo/blob/main/Screenshot%202025-10-07%20062535.png?raw=true)
+
 ---
 
 ## Features
