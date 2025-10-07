@@ -90,6 +90,21 @@ python webviewmcrcongui.py
 
 ## Author
 Developed by [h190k](https://github.com/h190k)
+**📧 Get in Touch:**
+- 🐦 **Twitter/X**: [@h190k](https://twitter.com/h190k) - Follow for updates
+- 📧 **Email**: [info@h190k.com](mailto:info@h190k.com) - For business inquiries
+- 🌟 **Star** this repo if it helped you!
+
+**💖 Support the Project:**
+- Fork it and add your features
+- Report bugs or suggest improvements
+- Share it with friends who need a better downloader
+- If you find my projects useful, consider supporting me with a donation.  
+Your support helps me create more open-source tools and share them with the community.  
+
+[![Donate on DeStream](https://img.shields.io/badge/Donate-DeStream-blue?style=for-the-badge)](https://destream.net/live/H190K/donate)  
+[![Donate with NOWPayments](https://img.shields.io/badge/Donate-NOWPayments-purple?style=for-the-badge)](https://nowpayments.io/donation?api_key=J0QACAH-BTH4F4F-QDXM4ZS-RCA58BH)  
+
 
 ---
 
