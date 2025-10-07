@@ -8,7 +8,7 @@ A dual-interface Python application for managing Minecraft servers via RCON. Inc
 ![Tk version image ](https://github.com/H190K/h190k.com-repo/blob/main/Screenshot%202025-10-07%20062558.png?raw=true)
 
 ### WebView Version
-![Webview version image ](https://github.com/H190K/h190k.com-repo/blob/main/Screenshot%202025-10-07%20062535.png?raw=true)
+![Webview version image ](https://github.com/H190K/h190k.com-repo/blob/main/Screenshot%202025-10-07%20072535.png?raw=true)
 
 ---
 
