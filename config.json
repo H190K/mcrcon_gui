@@ -1,0 +1,5 @@
+{
+  "server_ip": "localhost",
+  "port": "25575",
+  "password": "your_rcon_password_here"
+}
