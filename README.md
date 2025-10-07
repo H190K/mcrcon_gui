@@ -109,4 +109,4 @@ Your support helps me create more open-source tools and share them with the comm
 ---
 
 ## License
-See `LICENSE` for details.
+[See LICENSE for details.](LICENSE)
