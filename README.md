@@ -55,15 +55,17 @@ The window has four pages, picked from the rail on the left:
 
 ## Download
 
-Get the latest version from the [Releases page](https://github.com/H190K/mcrcon_gui/releases).
+**Latest version: [v0.1.0](https://github.com/H190K/mcrcon_gui/releases/latest)**, also on [mcrcon.app/download](https://mcrcon.app/download/).
 
-| System | File | Notes |
+| System | Download | Notes |
 |---|---|---|
-| Windows 10/11 (64-bit) | `MCRCON-GUI-0.1.0-windows-x64-setup.exe` | Installer. No admin rights needed; adds Start menu and optional desktop shortcuts. |
-| Windows 10/11 (64-bit) | `MCRCON-GUI-0.1.0-windows-x64-portable.zip` | Unzip anywhere and run `MCRCON GUI.exe`. |
-| macOS / Linux | — | Run from source (below). Native builds are planned. |
+| Windows 10/11 (64-bit) | [**Installer** (`MCRCON-GUI-0.1.0-windows-x64-setup.exe`)](https://github.com/H190K/mcrcon_gui/releases/download/v0.1.0/MCRCON-GUI-0.1.0-windows-x64-setup.exe) | Recommended. No admin rights needed, adds a Start menu shortcut, and keeps itself up to date. |
+| Windows 10/11 (64-bit) | [**Portable** (`MCRCON-GUI-0.1.0-windows-x64-portable.zip`)](https://github.com/H190K/mcrcon_gui/releases/download/v0.1.0/MCRCON-GUI-0.1.0-windows-x64-portable.zip) | Unzip anywhere and run `MCRCON GUI.exe`. Tells you about updates but doesn't install them. |
+| macOS / Linux | | Run from source (below). Native builds are planned. |
 
-> Windows SmartScreen may warn about an unrecognised app because the installer isn't code-signed. Click **More info → Run anyway**. You can check the download against the SHA-256 checksum published with the release.
+Checksums are in [`SHA256SUMS.txt`](https://github.com/H190K/mcrcon_gui/releases/download/v0.1.0/SHA256SUMS.txt). In PowerShell: `Get-FileHash .\MCRCON-GUI-0.1.0-windows-x64-setup.exe`.
+
+> Windows SmartScreen may warn about an unrecognised app because the installer isn't code-signed. Click **More info → Run anyway**.
 
 ### Run from source
 
@@ -176,7 +178,7 @@ Look for `crash.log` in the settings folder above and attach it to a [bug report
 
 ```bash
 python -m pip install -e ".[dev]"
-python -m pytest            # 60+ tests, including headless UI tests
+python -m pytest            # 80+ tests, including headless UI and updater tests
 python tools/build.py       # app folder + portable zip (+ installer on Windows with Inno Setup 6)
 ```
 
