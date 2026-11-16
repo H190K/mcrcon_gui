@@ -196,7 +196,7 @@ Everything else about the code (layout, how completion works, adding commands) i
 
 ## Author
 
-Made by **Hasan Albehadili** ([H190K](https://github.com/H190K)).
+Made by **[H190K](https://github.com/H190K)** · [mcrcon.app](https://mcrcon.app)
 Twitter/X: [@h190k](https://twitter.com/h190k) · Email: [info@h190k.com](mailto:info@h190k.com)
 
 ## License

@@ -126,12 +126,12 @@ def _write_version_file() -> Path:
   ffi=FixedFileInfo(filevers=({major}, {minor}, {patch}, 0), prodvers=({major}, {minor}, {patch}, 0)),
   kids=[
     StringFileInfo([StringTable('040904B0', [
-      StringStruct('CompanyName', 'Hasan Albehadili (H190K)'),
+      StringStruct('CompanyName', 'H190K'),
       StringStruct('FileDescription', 'MCRCON GUI'),
       StringStruct('FileVersion', '{__version__}'),
       StringStruct('ProductName', 'MCRCON GUI'),
       StringStruct('ProductVersion', '{__version__}'),
-      StringStruct('LegalCopyright', 'Copyright (c) 2025-2026 Hasan Albehadili. MIT License.'),
+      StringStruct('LegalCopyright', 'Copyright (c) 2025-2026 H190K. MIT License.'),
       StringStruct('OriginalFilename', '{APP_NAME}.exe')])]),
     VarFileInfo([VarStruct('Translation', [1033, 1200])])
   ]

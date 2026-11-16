@@ -3,8 +3,7 @@
 __version__ = "0.1.0"
 
 APP_NAME = "MCRCON GUI"
-AUTHOR = "Hasan Albehadili"
-AUTHOR_HANDLE = "H190K"
+AUTHOR = "H190K"
 APP_WEBSITE = "https://mcrcon.app"
 REPO_URL = "https://github.com/H190K/mcrcon_gui"
 AUTHOR_URL = "https://github.com/H190K"

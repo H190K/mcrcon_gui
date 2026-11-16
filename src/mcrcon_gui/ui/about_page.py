@@ -6,7 +6,7 @@ from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QDesktopServices, QIcon
 from PySide6.QtWidgets import QGridLayout, QHBoxLayout, QLabel, QScrollArea, QVBoxLayout, QWidget
 
-from .. import APP_WEBSITE, AUTHOR, AUTHOR_HANDLE, AUTHOR_URL, REPO_URL, __version__
+from .. import APP_WEBSITE, AUTHOR, AUTHOR_URL, REPO_URL, __version__
 from . import theme
 from .theme import Theme, display_font, mono_font
 from .widgets import BrutalButton, Card, PageHeader
@@ -125,7 +125,7 @@ class AboutPage(QWidget):
 
     def apply_theme(self, t: Theme) -> None:
         link = f'style="color:{t.text}"'
-        self.byline.setText(f'Made by <b>{AUTHOR}</b> (<a {link} href="{AUTHOR_URL}">{AUTHOR_HANDLE}</a>) · MIT License · free forever')
+        self.byline.setText(f'Made by <a {link} href="{AUTHOR_URL}"><b>{AUTHOR}</b></a> · MIT License · free forever')
         self.oss_text.setText(
             f"Every line of MCRCON GUI is public on "
             f'<a {link} href="{REPO_URL}">GitHub</a> under the MIT License. Read the code, build it yourself, '

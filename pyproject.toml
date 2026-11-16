@@ -9,7 +9,7 @@ description = "A native desktop control panel for Minecraft servers over RCON."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
-authors = [{ name = "Hasan Albehadili (H190K)", email = "info@h190k.com" }]
+authors = [{ name = "H190K", email = "info@h190k.com" }]
 requires-python = ">=3.10"
 dependencies = ["PySide6>=6.6"]
 keywords = ["minecraft", "rcon", "server", "desktop", "pyside6", "qt"]
