@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcrcon-gui"
+dynamic = ["version"]
+description = "A native desktop control panel for Minecraft servers over RCON."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{ name = "Hasan Albehadili (H190K)", email = "info@h190k.com" }]
+requires-python = ">=3.10"
+dependencies = ["PySide6>=6.6"]
+keywords = ["minecraft", "rcon", "server", "desktop", "pyside6", "qt"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: X11 Applications :: Qt",
+    "Operating System :: OS Independent",
+    "Topic :: Games/Entertainment",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyinstaller>=6.10", "pillow>=10"]
+
+[project.urls]
+Homepage = "https://github.com/H190K/mcrcon_gui"
+Issues = "https://github.com/H190K/mcrcon_gui/issues"
+
+[project.gui-scripts]
+mcrcon-gui = "mcrcon_gui.app:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "mcrcon_gui.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mcrcon_gui = ["assets/*", "assets/fonts/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
