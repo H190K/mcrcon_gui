@@ -70,7 +70,6 @@ class AboutPage(QWidget):
             ("mcrcon.app", "globe", "yellow", APP_WEBSITE),
             ("Source code", "github", "surface", REPO_URL),
             ("Report a bug", "bug", "surface", f"{REPO_URL}/issues/new/choose"),
-            ("Donate", "heart", "pink", "https://donation.h190k.com/"),
         ):
             button = BrutalButton(label, color, compact=True, icon=icon_name)
             button.setToolTip(url)

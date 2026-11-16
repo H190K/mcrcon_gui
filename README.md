@@ -188,20 +188,11 @@ python tools/fake_server.py --port 25575 --password test
 
 Everything else about the code (layout, how completion works, adding commands) is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Support the project
+## Help the project
 
 - Star the repo and share it with other server admins
 - Report bugs or ideas in [Issues](https://github.com/H190K/mcrcon_gui/issues)
 - Send a pull request, see [CONTRIBUTING.md](CONTRIBUTING.md)
-
-If the app saves you time, you can also support development:
-
-<div align="center">
-
-[![Fiat Donation](https://img.shields.io/badge/💵_Fiat_Donation-H190K/Sindipay-ff7a18?style=for-the-badge&logo=creditcard&logoColor=white)](https://donation.h190k.com/)
-[![Crypto Donations](https://img.shields.io/badge/Crypto_Donations-NOWPayments-9B59B6?style=for-the-badge&logo=bitcoin&logoColor=colored)](https://nowpayments.io/donation?api_key=J0QACAH-BTH4F4F-QDXM4ZS-RCA58BH)
-
-</div>
 
 ## Author
 
