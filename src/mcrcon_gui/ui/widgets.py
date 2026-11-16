@@ -9,7 +9,7 @@ from __future__ import annotations
 from collections.abc import Sequence
 
 from PySide6.QtCore import QPointF, QRect, QRectF, QSize, Qt, QTimer, Signal
-from PySide6.QtGui import QColor, QFontMetrics, QKeyEvent, QMouseEvent, QPainter, QPen
+from PySide6.QtGui import QBrush, QColor, QFontMetrics, QKeyEvent, QMouseEvent, QPainter, QPen, QPixmap
 from PySide6.QtWidgets import QAbstractButton, QFrame, QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
 
 from . import theme
@@ -316,17 +316,24 @@ class DotBackground(QWidget):
 
     SPACING = 22
 
+    _tiles: dict[str, QPixmap] = {}
+
+    @classmethod
+    def _tile(cls, t: Theme) -> QPixmap:
+        """One grid cell with its dot; painted as a brush so a repaint is a single fill call."""
+        if t.name not in cls._tiles:
+            tile = QPixmap(cls.SPACING, cls.SPACING)
+            tile.fill(QColor(t.paper))
+            painter = QPainter(tile)
+            half = cls.SPACING // 2
+            painter.fillRect(half, half, 2, 2, QColor(t.muted if not t.dark else "#2C2C36"))
+            painter.end()
+            cls._tiles[t.name] = tile
+        return cls._tiles[t.name]
+
     def paintEvent(self, event) -> None:  # noqa: N802
-        t = theme.current()
         p = QPainter(self)
-        p.fillRect(self.rect(), QColor(t.paper))
-        dot = QColor(t.muted if not t.dark else "#2C2C36")
-        r = event.rect()
-        start_x = r.left() - r.left() % self.SPACING + self.SPACING // 2
-        start_y = r.top() - r.top() % self.SPACING + self.SPACING // 2
-        for x in range(start_x, r.right() + 1, self.SPACING):
-            for y in range(start_y, r.bottom() + 1, self.SPACING):
-                p.fillRect(x, y, 2, 2, dot)
+        p.fillRect(event.rect(), QBrush(self._tile(theme.current())))
 
 
 class PageHeader(QWidget):
