@@ -28,7 +28,8 @@ from .. import APP_NAME, UPDATE_MANIFEST_URLS, __version__
 USER_AGENT = f"MCRCON-GUI/{__version__}"
 ProgressCallback = Callable[[int, int], None]
 
-_CREATE_NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0x08000000)
+# Process-creation flags are Windows-only; POSIX Python rejects any non-zero value.
+_CREATE_NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0x08000000) if sys.platform == "win32" else 0
 _DETACHED_PROCESS = getattr(subprocess, "DETACHED_PROCESS", 0x00000008)
 _CREATE_NEW_PROCESS_GROUP = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0x00000200)
 _ERROR_ELEVATION_REQUIRED = 740

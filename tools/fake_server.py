@@ -91,7 +91,15 @@ class FakeRconServer:
         return self
 
     def stop(self) -> None:
+        # Shut down first: on Linux, close() alone doesn't wake a thread blocked in accept(),
+        # and the port stays bound.
+        try:
+            self._sock.shutdown(socket.SHUT_RDWR)
+        except OSError:
+            pass
         self._sock.close()
+        if self._thread.is_alive():
+            self._thread.join(timeout=2)
 
     def __enter__(self) -> "FakeRconServer":
         return self.start()
