@@ -32,11 +32,16 @@ def pytest_sessionfinish(session, exitstatus):
     Left to interpreter shutdown, PySide on Python < 3.12 can free Qt objects in the wrong
     order and abort ("munmap_chunk(): invalid pointer") after every test has passed.
     """
+    import tempfile
+
     from PySide6.QtWidgets import QApplication
 
     app = QApplication.instance()
     if app is None:
         return
+    # Closing a window saves settings, and per-test isolation has already been undone here:
+    # never let that write reach the developer's real config folder.
+    os.environ["MCRCON_GUI_CONFIG_DIR"] = tempfile.mkdtemp(prefix="mcrcon-test-")
     for widget in app.topLevelWidgets():
         widget.close()
         widget.deleteLater()
