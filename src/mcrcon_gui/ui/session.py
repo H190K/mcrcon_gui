@@ -25,7 +25,9 @@ class Session(QObject):
     state_changed = Signal(str)  # offline | connecting | online | reconnecting
     entry_added = Signal(object)  # ConsoleEntry
     log_cleared = Signal()
-    players_changed = Signal(object)  # PlayerList | None
+    # No payload: read session.players. Passing None through Signal(object) trips a PySide
+    # reference-count bug on Python < 3.12 ("none_dealloc").
+    players_changed = Signal()
     commands_discovered = Signal(object)  # set[str]
     auth_failed = Signal()
 
@@ -177,7 +179,7 @@ class Session(QObject):
 
     def _on_disconnected(self, reason: str) -> None:
         self.players = None
-        self.players_changed.emit(None)
+        self.players_changed.emit()
         if not reason:
             self._set_state("offline")
             self.log_line("system", "Disconnected.")
@@ -197,7 +199,7 @@ class Session(QObject):
             players = parse_list_reply(response)
             if players is not None:
                 self.players = players
-                self.players_changed.emit(players)
+                self.players_changed.emit()
         elif root == "help" and silent:
             found = parse_help_reply(response)
             if found:

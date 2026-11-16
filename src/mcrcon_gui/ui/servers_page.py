@@ -60,7 +60,7 @@ class ServerCard(Card):
         self.body_layout.addSpacing(4)
         self.body_layout.addLayout(row)
         session.state_changed.connect(lambda _s: self.refresh())
-        session.players_changed.connect(lambda _p: self.refresh())
+        session.players_changed.connect(self.refresh)
         self.refresh()
 
     def refresh(self) -> None:

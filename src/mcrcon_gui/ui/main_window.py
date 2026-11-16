@@ -161,7 +161,7 @@ class MainWindow(QMainWindow):
         self.pages[session.profile.id] = page
         self.console_page.stack.addWidget(page)
         session.state_changed.connect(lambda state, s=session: self._on_session_state(s, state))
-        session.players_changed.connect(lambda players, s=session: self._on_players(s, players))
+        session.players_changed.connect(lambda s=session: self._on_players(s, s.players))
         session.entry_added.connect(lambda _e: self.console_page.tabs.refresh())
         session.auth_failed.connect(lambda s=session: self.show_toast(f"{s.profile.name}: wrong password", "red"))
 
